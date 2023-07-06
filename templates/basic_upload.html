@@ -1,0 +1,26 @@
+<!doctype html>
+  <title>upload da file!</title>
+  <img src="t.gif"/> <img src="e.gif"/> <img src="l.gif"/> <img src="e.gif"/> <img src="c.gif"/> <img src="o.gif"/> <img src="m.gif"/> <img src="s.gif"/> 
+  <h1>Upload new File</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{ msg }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <div style="position: absolute; top: 0; right: 0; width: 400px; text-align:right;">
+    Logged in as {{ username }}
+  </div>
+  <form align="right" name="form1" method="post" action="/log_out">
+    <label class="logoutLblPos">
+    <input name="submit2" type="submit" id="submit2" value="log out">
+    </label>
+  </form>
+
+  <form method=post enctype=multipart/form-data>
+    <input type=file name=file>
+    <input type=submit value=Upload>
+  </form>

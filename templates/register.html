@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>registrar</title>
+    <link rel="stylesheet">
+</head>
+<body>
+    <img src="t.gif"/> <img src="e.gif"/> <img src="l.gif"/> <img src="e.gif"/> <img src="c.gif"/> <img src="o.gif"/> <img src="m.gif"/> <img src="s.gif"/>
+    <h2>Register</h2><br>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="register">
+    <form id="createuser" method="POST" action="/register">
+        <label><b>User Name     
+        </b>
+        </label>
+        <input type="text" name="username" id="username" value="{{ request.form.username }}" placeholder="Username">
+        <br><br>
+        <label><b>Password
+        </b>
+        </label>
+        <input type="Password" name="password" id="pass" value="{{ request.form.password }}" placeholder="Password">
+        <br><br>
+        <input type="submit" name="register" id="register" value="Create User">
+        <br><br>
+    </form>
+</div>
+</body>
+</html>
